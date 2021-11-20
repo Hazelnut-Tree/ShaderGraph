@@ -27,7 +27,7 @@ public class HighlightController : MonoBehaviour
 
         if (highlightCoroutine != null)
         {
-            // stop coroutine and go to 1 (highlight)
+           
             StopCoroutine(highlightCoroutine);
             
         }
@@ -43,9 +43,9 @@ public class HighlightController : MonoBehaviour
 
         if (highlightCoroutine != null)
         {
-            // stop coroutine and go back to 0
+           
             StopCoroutine(highlightCoroutine);
-            //highlightCoroutine = StartCoroutine(Highlight(0.0f));
+            
         }
 
         if (enabled)
@@ -58,7 +58,7 @@ public class HighlightController : MonoBehaviour
     {
         while (!Mathf.Approximately(currentHighlightAmount, target) )
         {
-            // move the highlight number towards target
+            
             currentHighlightAmount = Mathf.MoveTowards(currentHighlightAmount, target, highlightSpeed * Time.deltaTime);
             highlightMaterial.SetFloat("_GlowAmount", currentHighlightAmount);
 
